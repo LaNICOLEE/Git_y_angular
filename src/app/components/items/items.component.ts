@@ -41,7 +41,7 @@ throw new Error('Method not implemented.');
     ];
   }
   deleteItem(item: Item) {
-    this.items = this.items.filter(x => x, id != item.id  );
+    this.items = this.items.filter(x => x.id != item.id  );
 
   }
 

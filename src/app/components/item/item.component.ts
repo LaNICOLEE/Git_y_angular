@@ -22,9 +22,13 @@ export class ItemComponent {
   }
 
   onToggle(item: Item){
-    item.completed !item.completed;
+    item.completed =!item.completed;
   }
 
 
+}
+
+function output(): (target: ItemComponent, propertyKey: "onDelteItem") => void {
+  throw new Error('Function not implemented.');
 }
 

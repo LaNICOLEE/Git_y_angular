@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-total',
@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class TotalComponent {
 
+  @Input() total:number = 0;
+  @Input() mensaje:string = '';
+
+  constructor() {}
+
+  ngOnInit(): void{
+  }
 }
