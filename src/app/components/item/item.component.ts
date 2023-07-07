@@ -9,8 +9,11 @@ import { Item } from 'src/app/models/item';
 })
 export class ItemComponent {
   @Input() item: Item = new Item();
-  @output() onDelteItem: EventEmitter<Item> = new EventEmitter();
-  DelteItem: any;
+  @output() deleteItem: EventEmitter<Item> = new EventEmitter();
+  @output() toggleItem: EventEmitter<Item> = new EventEmitter();
+
+
+  DeleteItem: any;
 
   constructor() {}
 
@@ -18,17 +21,18 @@ export class ItemComponent {
   }
 
   onDelete(item: Item) {
-    this.DelteItem.emit(Item);
+    this.DeleteItem.emit(Item);
   }
 
   onToggle(item: Item){
     item.completed =!item.completed;
+    this.toggleItem.emit(item);
   }
 
 
+
+
 }
 
-function output(): (target: ItemComponent, propertyKey: "onDelteItem") => void {
-  throw new Error('Function not implemented.');
-}
+
 
