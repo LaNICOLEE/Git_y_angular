@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Item } from 'src/app/models/item';
 
 
@@ -9,8 +9,8 @@ import { Item } from 'src/app/models/item';
 })
 export class ItemComponent {
   @Input() item: Item = new Item();
-  @output() deleteItem: EventEmitter<Item> = new EventEmitter();
-  @output() toggleItem: EventEmitter<Item> = new EventEmitter();
+  @Output() deleteItem: EventEmitter<Item> = new EventEmitter();
+  @Output() toggleItem: EventEmitter<Item> = new EventEmitter();
 
 
   DeleteItem: any;

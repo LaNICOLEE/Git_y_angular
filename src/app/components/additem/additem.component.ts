@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Item } from 'src/app/models/item';
 
 @Component({
   selector: 'app-additem',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AdditemComponent {
 
+  id:number=0;
   title:string='';
   price:number=0;
   quantity:number=0;
@@ -14,5 +16,14 @@ export class AdditemComponent {
   constructor() {}
 
   ngOnInit(): void{
+  }
+
+  onSubmit(){
+    const item = new Item();
+    item.id = this.id;
+    item.title = this.title;
+    item.price = this.price;
+    item.quantity = this.quantity;
+    item.completed = false;
   }
 }
