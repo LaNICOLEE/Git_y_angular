@@ -5,11 +5,11 @@ import { ItemsComponent } from './components/items/items.component';
 const routes: Routes = [
   {
     path:'',
-    component: 
+    component: ItemsComponent 
   },
   {
     path: '/add',
-    component: AddItemComponent,
+    component: AdditemComponent
   }
 ];
 

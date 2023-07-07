@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AdditemComponent {
 
+  title:string='';
+  price:number=0;
+  quantity:number=0;
+
+  constructor() {}
+
+  ngOnInit(): void{
+  }
 }
