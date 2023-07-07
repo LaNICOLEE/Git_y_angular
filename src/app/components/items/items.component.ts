@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { item } from '../../models/item';
+import { Item } from '../../models/item';
 
 @Component({
   selector: 'app-items',
@@ -7,7 +7,11 @@ import { item } from '../../models/item';
   styleUrls: ['./items.component.css']
 })
 export class ItemsComponent {
-  items:item[] = [];
+sevent: any;
+DeleteItem(arg0: any) {
+throw new Error('Method not implemented.');
+}
+  items:Item[] = [];
 
   constructor() {}
 
@@ -17,7 +21,7 @@ export class ItemsComponent {
         id: 0,
         title: 'manzana', 
         price: 10.5,
-        quantity: 5,
+        quantity: 4,
         completed: false
       },
       {
@@ -26,8 +30,19 @@ export class ItemsComponent {
         price: 3.5,
         quantity: 8,
         completed: true
+      },
+      {
+        id: 2,
+        title: 'chamarra', 
+        price: 300,
+        quantity: 1,
+        completed: false
       }
     ];
+  }
+  deleteItem(item: Item) {
+    this.items = this.items.filter(x => x, id != item.id  );
+
   }
 
 }
