@@ -12,6 +12,7 @@ DeleteItem(arg0: any) {
 throw new Error('Method not implemented.');
 }
   items:Item[] = [];
+  total:number= 0;
 
   constructor() {}
 
@@ -39,10 +40,18 @@ throw new Error('Method not implemented.');
         completed: false
       }
     ];
+    this.getTotal();
   }
   deleteItem(item: Item) {
     this.items = this.items.filter(x => x.id != item.id  );
 
+  }
+
+  getTotal(){
+    this.total = this.items
+                .filter(item => !item.completed)
+                .map(item => item.quantity * item.price)
+                .reduce((acc, item) => acc += item, 0);
   }
 
 }
